@@ -20,6 +20,21 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.30.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-jetty</artifactId>
+			<version>1.30.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-sheets</artifactId>
+			<version>v4-rev20191213-1.30.3</version>
+		</dependency>
+		<dependency>
 			<groupId>com.discord4j</groupId>
 			<artifactId>discord4j-core</artifactId>
 			<version>3.0.11</version>
@@ -28,6 +43,11 @@
 			<groupId>com.github.taycaldwell</groupId>
 			<artifactId>riot-api-java</artifactId>
 			<version>4.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.10.2</version>
 		</dependency>
 	</dependencies>
 	<repositories>

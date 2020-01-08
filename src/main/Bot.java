@@ -20,10 +20,12 @@ public class Bot
 
 	private CommandsManager	manager	= new CommandsManager();
 
+	private InhouseQueue	queue	= new InhouseQueue();
+
 	public static void main(String[] args)
 	{
 		Bot bot = new Bot();
-		bot.discord = new DiscordClientBuilder("NjMwODgyMzI5Mjc5MzMyMzcy.XhQPxA.07iHvvKvZIlEiheaF0wa1V0l9tc").build();
+		bot.discord = new DiscordClientBuilder(args[0]).build();
 		Map<String, Command> commands = bot.manager.getCommands();
 		bot.discord.getEventDispatcher().on(MessageCreateEvent.class).flatMap(event ->
 		{
@@ -33,12 +35,16 @@ public class Bot
 							.flatMap(entry -> entry.getValue().execute(bot, event)).next());
 		}).subscribe();
 		bot.discord.login().block();
-
 	}
 
 	public Random getRandom()
 	{
 		return random;
+	}
+
+	public InhouseQueue getQueue()
+	{
+		return queue;
 	}
 
 }
