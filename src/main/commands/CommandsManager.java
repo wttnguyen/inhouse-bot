@@ -9,6 +9,7 @@ import main.commands.impl.Flip;
 import main.commands.impl.queue.Drop;
 import main.commands.impl.queue.Join;
 import main.commands.impl.queue.SetQueueTime;
+import main.commands.impl.queue.ShowQueue;
 import main.commands.impl.queue.StartQueue;
 
 public class CommandsManager
@@ -36,6 +37,10 @@ public class CommandsManager
 		commands.put("q", setQueueTime);
 		
 		commands.put("leggo", new StartQueue());
+		
+		Command showQueue = new ShowQueue();
+		commands.put("queue", showQueue);
+		commands.put("lobby", showQueue);
 	}
 
 	public Map<String, Command> getCommands()
